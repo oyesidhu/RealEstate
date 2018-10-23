@@ -1,0 +1,49 @@
+"""S2_G5_Fall2018 URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from myapp import views
+from django.conf.urls import url
+from myapp import views
+
+urlpatterns = [
+    #path('admin/', admin.site.urls),
+    #path('', views.home, name='index'),
+    url(r'', views.home, name='index'),
+    url(r'^index', views.home, name='index'),
+    url(r'^search_property', views.search_property, name='search_property'),
+    url(r'^advertise_property', views.advertise_property, name='advertise_property'),
+    url(r'^sign_in', views.register, name='sign_in'),
+    url(r'^contactus', views.contactus, name='contactus'),
+    url(r'^about', views.about, name='about'),
+]
+
+# from django.urls import path
+#
+# from myapp import views
+# from django.conf.urls import url
+# from . import views
+#
+# app_name = 'myapp'
+# urlpatterns = [
+#     # ex: /myapp/
+#     path('', views.home, name='index'),
+#     path('search/', views.search_property, name='search'),
+#     path('advertise/', views.advertise_property, name='advertise'),
+#     path('signin/', views.register, name='signin'),
+#     path('contact/', views.contactus, name='contact'),
+#     path('about/', views.about, name='about'),
+#     path('detail/', views.detail, name='detail'),
+# ]
